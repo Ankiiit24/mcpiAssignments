@@ -59,8 +59,8 @@ all: main-build
 main-build: Day10_1.elf secondary-outputs
 
 # Tool invocations
-Day10_1.elf Day10_1.map: $(OBJS) $(USER_OBJS) /home/poonam/STM32CubeIDE/workspace_1.15.0/Day10_1/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Day10_1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/poonam/STM32CubeIDE/workspace_1.15.0/Day10_1/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Day10_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Day10_1.elf Day10_1.map: $(OBJS) $(USER_OBJS) /home/intel/mcpiAssignments/Day10_1/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Day10_1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/intel/mcpiAssignments/Day10_1/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Day10_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

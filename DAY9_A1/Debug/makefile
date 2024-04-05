@@ -59,8 +59,8 @@ all: main-build
 main-build: DAY9_A1.elf secondary-outputs
 
 # Tool invocations
-DAY9_A1.elf DAY9_A1.map: $(OBJS) $(USER_OBJS) /Users/cherikiansh/STM32CubeIDE/workspace_1.15.0/DAY9_A1/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "DAY9_A1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/cherikiansh/STM32CubeIDE/workspace_1.15.0/DAY9_A1/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DAY9_A1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+DAY9_A1.elf DAY9_A1.map: $(OBJS) $(USER_OBJS) /home/intel/mcpiAssignments/DAY9_A1/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "DAY9_A1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/intel/mcpiAssignments/DAY9_A1/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DAY9_A1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
