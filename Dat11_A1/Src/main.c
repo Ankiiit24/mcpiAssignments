@@ -38,17 +38,17 @@ int main(void)
 
 		while(1)
 		{
-			for(duty = 1; duty <= 100; duty++) {
+			for(duty = 1; duty <= 300; duty++) {
 				TIM8->CCR1=duty;
 				while(exti0_flag == 0);
-				duty = duty +5;
+				duty = duty +10;
 				exti0_flag = 0;
 				DelayMs(50);
 			}
 				for(;duty>=1;) {
 					TIM8->CCR1=duty;
 					while(exti0_flag == 0);
-					duty = duty -5;
+					duty = duty -10;
 					exti0_flag = 0;
 					DelayMs(50);
 				}
